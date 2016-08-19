@@ -1,0 +1,8 @@
+---
+applications:
+- name: sample-app
+  memory: 512M
+  host: sample-app
+  
+services:
+ - discovery-service

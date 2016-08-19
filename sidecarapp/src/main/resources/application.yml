@@ -1,0 +1,18 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: sample-app
+
+sidecar:
+  health-uri: http://localhost:80/health.json
+  port: 80
+
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://discovery-service.local.pcfdev.io/eureka/
+  instance:
+    hostname: ${vcap.application.uris[0]:http://sidecarapp/}
+    nonSecurePort: 80
